@@ -65,7 +65,6 @@ export const SignInPage = () => {
   const validate = (fieldValues = values) => {
     let temp = { ...errors };
     if ("email" in fieldValues)
-      /* eslint-disable-next-line */
       temp.email =
         fieldValues.email &&
         /* eslint-disable-next-line */
@@ -145,6 +144,7 @@ export const SignInPage = () => {
               id="email"
               label="Имейл адрес"
               name="email"
+              value={values.email}
               autoFocus
               onChange={handleInputChange}
               error={errors.email}
@@ -153,6 +153,7 @@ export const SignInPage = () => {
             <TextField
               variant="outlined"
               margin="normal"
+              value={values.password}
               required
               fullWidth
               name="password"
